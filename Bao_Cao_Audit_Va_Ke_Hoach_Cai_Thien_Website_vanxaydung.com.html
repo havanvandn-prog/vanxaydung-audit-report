@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Kiểm Tra & Kế Hoạch Cải Thiện Toàn Diện — vanxaydung.com</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background-color: #ffffff; color: #000000; }
+      .page-break { page-break-before: always; }
+    }
+    .badge-p0 { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .badge-p1 { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-p2 { background-color: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="bg-orange-600 text-white text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wider">Website Growth Audit</span>
+          <span class="text-xs text-slate-400">Tài Liệu Thẩm Định Độc Lập</span>
+        </div>
+        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">vanxaydung.com — Báo Cáo Hiện Trạng & Phương Án Cải Thiện</h1>
+      </div>
+      <div class="flex items-center gap-2 no-print self-end sm:self-auto">
+        <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium px-3.5 py-2 rounded-lg border border-slate-700 flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          In Báo Cáo / Xuất PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Navigation Bar -->
+  <nav class="bg-white border-b border-slate-200 shadow-sm no-print sticky top-[73px] z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4 overflow-x-auto py-2.5 text-xs font-semibold text-slate-600">
+      <a href="#tong-quan" class="hover:text-blue-600 whitespace-nowrap">0. Tổng Quan</a>
+      <span class="text-slate-300">|</span>
+      <a href="#executive-summary" class="hover:text-blue-600 whitespace-nowrap">1. Tóm Tắt Điều Hành (P0/P1)</a>
+      <span class="text-slate-300">|</span>
+      <a href="#bang-diem" class="hover:text-blue-600 whitespace-nowrap">2. Chấm Điểm Hiện Trạng</a>
+      <span class="text-slate-300">|</span>
+      <a href="#sitemap-muc-tieu" class="hover:text-blue-600 whitespace-nowrap text-blue-600 font-bold">3. Kiến Trúc Sitemap Mới</a>
+      <span class="text-slate-300">|</span>
+      <a href="#blueprint-sections" class="hover:text-blue-600 whitespace-nowrap text-orange-600 font-bold">4. Cấu Trúc Section 8 Trang Lõi</a>
+      <span class="text-slate-300">|</span>
+      <a href="#roadmap" class="hover:text-blue-600 whitespace-nowrap">5. Lộ Trình Triển Khai</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+    <!-- Project Profile Overview -->
+    <div id="tong-quan" class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+        <div>
+          <span class="text-slate-500 block text-xs font-medium uppercase tracking-wider">Tên miền & Doanh nghiệp</span>
+          <p class="font-bold text-slate-900 text-base mt-0.5">vanxaydung.com</p>
+          <p class="text-xs text-slate-600 mt-1">Công Ty CP TVTK & Xây Dựng V-HOME / Nhà máy Tú Anh 68</p>
+        </div>
+        <div>
+          <span class="text-slate-500 block text-xs font-medium uppercase tracking-wider">Ngành nghề & Mô hình</span>
+          <p class="font-semibold text-slate-800 text-base mt-0.5">Sản xuất Cốp Pha (B2B)</p>
+          <p class="text-xs text-slate-600 mt-1">Ván phủ phim 12/15/18mm, Ván nội thất, Giàn giáo</p>
+        </div>
+        <div>
+          <span class="text-slate-500 block text-xs font-medium uppercase tracking-wider">Mục tiêu chuyển đổi cốt lõi</span>
+          <p class="font-semibold text-orange-600 text-base mt-0.5">Báo Giá Sỉ & Đại Lý Tỉnh</p>
+          <p class="text-xs text-slate-600 mt-1">Đơn hàng nguyên xe, cấp dự án, mở đại lý phân phối</p>
+        </div>
+        <div>
+          <span class="text-slate-500 block text-xs font-medium uppercase tracking-wider">Thời điểm & Dữ liệu quét</span>
+          <p class="font-semibold text-slate-800 text-base mt-0.5">24/10/2026 (100% Thực tế)</p>
+          <p class="text-xs text-slate-600 mt-1">49 URLs sitemap, mã nguồn HTML, CMS Flatsome</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert Banner: P0 Issues -->
+    <div class="bg-red-50 border-l-4 border-red-600 p-5 rounded-r-xl shadow-sm">
+      <div class="flex items-start gap-3">
+        <div class="p-1.5 bg-red-100 text-red-600 rounded-lg shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-red-900">CẢNH BÁO KHẨN CẤP (P0): Website đang tự chặn Google đánh chỉ mục (noindex, nofollow)</h3>
+          <p class="text-sm text-red-700 mt-1 leading-relaxed">
+            Mã nguồn trên toàn bộ 49 trang đang chứa thẻ <code class="bg-red-100 px-1.5 py-0.5 rounded font-mono text-xs font-bold">&lt;meta name="robots" content="noindex, nofollow" /&gt;</code>. Website hoàn toàn vô hình trên Google Search tự nhiên. Cần tắt ngay tùy chọn chặn trong WordPress Admin để cứu lưu lượng tìm kiếm.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Summary & Top 5 Opportunities -->
+    <section id="executive-summary" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">1. Tóm Tắt Điều Hành — Top 5 Vấn Đề Sống Còn</h2>
+          <p class="text-xs text-slate-500">Phát hiện dựa trên kiểm tra bằng chứng thực tế tại từng URL của website</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-xl border border-slate-200 shadow-sm">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-600 uppercase">
+              <th class="py-3 px-4 w-12 text-center">#</th>
+              <th class="py-3 px-4 w-1/4">Hiện trạng có bằng chứng</th>
+              <th class="py-3 px-4 w-1/4">Hệ quả đến kinh doanh</th>
+              <th class="py-3 px-4">Giải pháp ưu tiên</th>
+              <th class="py-3 px-4 w-28 text-center">Mức độ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50/50">
+              <td class="py-3 px-4 text-center font-bold text-slate-500">1</td>
+              <td class="py-3 px-4 font-semibold text-slate-900">Toàn bộ 49 URLs bị chặn noindex</td>
+              <td class="py-3 px-4 text-slate-600">Google không lập chỉ mục; mất 100% khách hàng tìm kiếm tự nhiên.</td>
+              <td class="py-3 px-4 text-slate-800">Tắt tùy chọn chặn index trong Cài đặt Đọc (WP Admin); cấu hình lại Yoast.</td>
+              <td class="py-3 px-4 text-center"><span class="badge-p0 text-xs font-bold px-2 py-0.5 rounded">P0 Khẩn Cấp</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/50">
+              <td class="py-3 px-4 text-center font-bold text-slate-500">2</td>
+              <td class="py-3 px-4 font-semibold text-slate-900">Xung đột 4 thương hiệu trên cùng 1 web</td>
+              <td class="py-3 px-4 text-slate-600">Khách nghi ngờ web lừa đảo hoặc cò mồi trung gian; mất uy tín nhà thầu lớn.</td>
+              <td class="py-3 px-4 text-slate-800">Thống nhất 1 tên pháp nhân: Công ty V-HOME - Nhà máy Tú Anh 68; xóa rác domain cũ.</td>
+              <td class="py-3 px-4 text-center"><span class="badge-p0 text-xs font-bold px-2 py-0.5 rounded">P0 Khẩn Cấp</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/50">
+              <td class="py-3 px-4 text-center font-bold text-slate-500">3</td>
+              <td class="py-3 px-4 font-semibold text-slate-900">Mục Dự Án copy văn mẫu bán chung cư</td>
+              <td class="py-3 px-4 text-slate-600">Không chứng minh được năng lực cấp ván; gây hiểu nhầm là web bất động sản.</td>
+              <td class="py-3 px-4 text-slate-800">Làm lại Case Studies: Nhà thầu chính, số lượng tấm, hình ảnh giao ván tại công trường.</td>
+              <td class="py-3 px-4 text-center"><span class="badge-p1 text-xs font-bold px-2 py-0.5 rounded">P1 Ưu Tiên</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/50">
+              <td class="py-3 px-4 text-center font-bold text-slate-500">4</td>
+              <td class="py-3 px-4 font-semibold text-slate-900">Hero thiếu nút CTA & Form Báo Giá RFQ</td>
+              <td class="py-3 px-4 text-slate-600">Khách lướt qua rồi thoát trang; tỷ lệ chuyển đổi khách sỉ cực thấp.</td>
+              <td class="py-3 px-4 text-slate-800">Bổ sung nút "Tải Báo Giá Nhà Máy", Form RFQ chọn độ dày & số lượng tấm.</td>
+              <td class="py-3 px-4 text-center"><span class="badge-p1 text-xs font-bold px-2 py-0.5 rounded">P1 Ưu Tiên</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/50">
+              <td class="py-3 px-4 text-center font-bold text-slate-500">5</td>
+              <td class="py-3 px-4 font-semibold text-slate-900">Rác sitemap, URL trùng lặp đuôi '-2'</td>
+              <td class="py-3 px-4 text-slate-600">Lãng phí tài nguyên crawl, bài viết tự cạnh tranh nhau trên Google.</td>
+              <td class="py-3 px-4 text-slate-800">Ẩn post type blocks, gộp 301 bài trùng lặp, xóa mã style nội dòng Times New Roman.</td>
+              <td class="py-3 px-4 text-center"><span class="badge-p1 text-xs font-bold px-2 py-0.5 rounded">P1 Ưu Tiên</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Qualitative Scorecard -->
+    <section id="bang-diem" class="space-y-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">2. Bảng Điểm Định Tính Hiện Trạng (Thang 0 - 5)</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 uppercase">SEO & Index</span>
+            <span class="text-red-600 font-extrabold text-xl">0.5 / 5</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-red-500 h-full" style="width: 10%"></div>
+          </div>
+          <p class="text-xs text-slate-600 mt-2.5">Bị khóa noindex toàn bộ; canonical trống; sitemap chứa template rác.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 uppercase">Độ Tin Cậy Thương Hiệu</span>
+            <span class="text-red-600 font-extrabold text-xl">1.5 / 5</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-red-500 h-full" style="width: 30%"></div>
+          </div>
+          <p class="text-xs text-slate-600 mt-2.5">Xung đột 4 tên thương hiệu; chân trang sót domain clone Vanphuphimvn.com.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 uppercase">CRO & Luồng Chuyển Đổi</span>
+            <span class="text-amber-600 font-extrabold text-xl">1.5 / 5</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-amber-500 h-full" style="width: 30%"></div>
+          </div>
+          <p class="text-xs text-slate-600 mt-2.5">Hero không có CTA; thiếu form RFQ B2B; thiếu thanh gọi nhanh dính chân mobile.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 uppercase">Nội Dung Chuyên Môn</span>
+            <span class="text-amber-600 font-extrabold text-xl">2.5 / 5</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-amber-500 h-full" style="width: 50%"></div>
+          </div>
+          <p class="text-xs text-slate-600 mt-2.5">Có sẵn 32 bài viết cẩm nang giá trị; cần loại bỏ đoạn văn lặp và cập nhật ảnh xưởng thật.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Site Architecture & Sitemap -->
+    <section id="sitemap-muc-tieu" class="space-y-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">3. Kiến Trúc Sitemap Mục Tiêu & Ma Trận Xử Lý URL</h2>
+        <p class="text-xs text-slate-500">Phân tầng kiến trúc B2B Industrial Hub và định tuyến chính xác từng URL</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Revenue Tier -->
+        <div class="bg-white rounded-xl border-t-4 border-t-blue-600 border border-slate-200 p-5 shadow-sm space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded">Tầng 1: Doanh Thu Lõi</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Nhóm Sản Phẩm & Báo Giá Sỉ</h3>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span> <strong>/van-phu-phim/</strong>: Danh mục ván phủ phim (So sánh quy cách)</li>
+            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span> <strong>/van-phu-phim/van-ep-phu-phim-12mm/</strong>: Ván sàn phụ / vách</li>
+            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span> <strong>/van-phu-phim/van-ep-phu-phim-15mm/</strong>: Ván sàn dầm quốc dân</li>
+            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span> <strong>/van-phu-phim/van-ep-phu-phim-18mm/</strong>: Ván chịu lực cao tầng</li>
+            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span> <strong>/bao-gia-van-phu-phim/</strong>: Trung tâm RFQ & Báo giá đại lý</li>
+          </ul>
+        </div>
+
+        <!-- Trust Tier -->
+        <div class="bg-white rounded-xl border-t-4 border-t-emerald-600 border border-slate-200 p-5 shadow-sm space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded">Tầng 2: Niềm Tin Năng Lực</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Hồ Sơ Nhà Máy & Dự Án Thật</h3>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span> <strong>/gioi-thieu/</strong>: Năng lực xưởng Tú Anh 68 & Pháp nhân V-HOME</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span> <strong>/du-an-tieu-bieu/</strong>: Case Study cấp ván công trường thực tế</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span> <strong>/chung-chi-chat-luong/</strong>: Kết quả thử nghiệm Quatest, CO/CQ</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span> <strong>/he-thong-kho-bai/</strong>: Bản đồ kho Đan Phượng & Hòa Bình</li>
+          </ul>
+        </div>
+
+        <!-- Content & Ads Tier -->
+        <div class="bg-white rounded-xl border-t-4 border-t-orange-600 border border-slate-200 p-5 shadow-sm space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-0.5 rounded">Tầng 3: SEO & Google Ads</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Phễu Kiến Thức & Trang Đích Ads</h3>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5"><span class="text-orange-500 font-bold">•</span> <strong>/tin-tuc/</strong>: Cẩm nang kỹ thuật coppha (32 bài tối ưu liên kết)</li>
+            <li class="flex items-start gap-1.5"><span class="text-orange-500 font-bold">•</span> <strong>Cluster 1:</strong> Tư vấn keo WBP Melamine vs Phenolic</li>
+            <li class="flex items-start gap-1.5"><span class="text-orange-500 font-bold">•</span> <strong>Cluster 2:</strong> Bí quyết tăng số lần luân chuyển lên 10 lần</li>
+            <li class="flex items-start gap-1.5"><span class="text-orange-500 font-bold">•</span> <strong>Landing Page Ads:</strong> Báo giá xưởng giao nhanh 24h</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- URL Decision Table -->
+      <div class="overflow-x-auto bg-white rounded-xl border border-slate-200 shadow-sm mt-4">
+        <div class="p-4 bg-slate-50 border-b border-slate-200">
+          <h3 class="font-bold text-slate-900 text-sm uppercase">Ma Trận Quyết Định Từng URL (Current vs Target)</h3>
+        </div>
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-100/75 border-b border-slate-200 font-bold text-slate-700">
+              <th class="py-2.5 px-3">URL Hiện Tại</th>
+              <th class="py-2.5 px-3">Hành Động</th>
+              <th class="py-2.5 px-3">URL Mục Tiêu</th>
+              <th class="py-2.5 px-3">Nhóm Intent & Mục Tiêu Trang</th>
+              <th class="py-2.5 px-3">Cơ Sở Quyết Định</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/</td>
+              <td class="py-2.5 px-3"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/</td>
+              <td class="py-2.5 px-3">Commercial / Phân luồng</td>
+              <td class="py-2.5 px-3 text-slate-600">Giữ nguyên URL; thêm Hero chuyển đổi, bảng giá và năng lực kho xưởng.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/van-phu-phim/</td>
+              <td class="py-2.5 px-3"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/van-phu-phim/</td>
+              <td class="py-2.5 px-3">Category Hub / Ván ép</td>
+              <td class="py-2.5 px-3 text-slate-600">Bổ sung bảng so sánh quy cách 12mm vs 15mm vs 18mm, hướng dẫn kỹ sư chọn ván.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/van-phu-phim/van-ep-phu-phim-12mm/</td>
+              <td class="py-2.5 px-3"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/van-phu-phim/van-ep-phu-phim-12mm/</td>
+              <td class="py-2.5 px-3">Transactional / Sản phẩm 12mm</td>
+              <td class="py-2.5 px-3 text-slate-600">Xóa đoạn văn lặp, bổ sung bảng Datasheet Quatest 1, form báo giá sàn phụ/vách.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/van-phu-phim/van-ep-phu-phim-15mm/</td>
+              <td class="py-2.5 px-3"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/van-phu-phim/van-ep-phu-phim-15mm/</td>
+              <td class="py-2.5 px-3">Transactional / Doanh thu lõi</td>
+              <td class="py-2.5 px-3 text-slate-600">Trang chủ lực (65% sản lượng), phân cấp giá lẻ/sỉ/cont, bài toán tiết kiệm m2 sàn.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/van-phu-phim/van-ep-phu-phim-18mm/</td>
+              <td class="py-2.5 px-3"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/van-phu-phim/van-ep-phu-phim-18mm/</td>
+              <td class="py-2.5 px-3">Transactional / Cao tầng chịu lực</td>
+              <td class="py-2.5 px-3 text-slate-600">Định vị dòng chịu lực cao, luân chuyển 10+ lần, tối ưu khoảng cách xà gồ đỡ.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/dang-ky-nhan-bao-gia-dai-ly/</td>
+              <td class="py-2.5 px-3"><span class="bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-bold">GỘP & 301</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/bao-gia-van-phu-phim/</td>
+              <td class="py-2.5 px-3">Transactional / Báo giá RFQ</td>
+              <td class="py-2.5 px-3 text-slate-600">Gộp với trang tìm đại lý tạo thành Trung Tâm Báo Giá & Chính Sách Đại Lý tập trung.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/can-tim-dai-ly-van-phu-phim/</td>
+              <td class="py-2.5 px-3"><span class="bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-bold">REDIRECT 301</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/bao-gia-van-phu-phim/</td>
+              <td class="py-2.5 px-3">Hợp nhất URL</td>
+              <td class="py-2.5 px-3 text-slate-600">Tránh phân tán link equity và trùng lặp nội dung.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/du-an/ & 13 URLs /featured_item/</td>
+              <td class="py-2.5 px-3"><span class="bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded font-bold">TÁCH & LÀM LẠI</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/du-an-tieu-bieu/</td>
+              <td class="py-2.5 px-3">Trust Proof / Case Studies</td>
+              <td class="py-2.5 px-3 text-slate-600">Xóa 100% bài viết PR bán chung cư; viết lại thành Case Studies cấp hàng công trường thật.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/co-so-ha-noi/</td>
+              <td class="py-2.5 px-3"><span class="bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-bold">TỐI ƯU & 301</span></td>
+              <td class="py-2.5 px-3 font-mono text-blue-700 font-semibold">/he-thong-kho-bai/</td>
+              <td class="py-2.5 px-3">Navigational / Hệ thống kho</td>
+              <td class="py-2.5 px-3 text-slate-600">Xóa tiêu đề lỗi "Thank you", bổ sung Google Maps chỉ đường kho Đan Phượng & Hòa Bình.</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-mono text-slate-700">/blocks/* (2 URLs)</td>
+              <td class="py-2.5 px-3"><span class="bg-red-100 text-red-800 px-1.5 py-0.5 rounded font-bold">CHẶN INDEX</span></td>
+              <td class="py-2.5 px-3 text-slate-400 font-mono">Xóa khỏi sitemap</td>
+              <td class="py-2.5 px-3">Template theme mồ côi</td>
+              <td class="py-2.5 px-3 text-slate-600">Chặn Googlebot crawl tốn tài nguyên và gây loãng chất lượng toàn website.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Blueprint Section-by-Section for 8 Core Templates (Continuous Visible Layout) -->
+    <section id="blueprint-sections" class="space-y-10">
+      <div class="border-b-2 border-orange-500 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <span class="bg-orange-600 text-white text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wider">Tài Liệu Thi Công UI/UX & Content</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-1 uppercase tracking-wide">4. Cấu Trúc Section Chi Tiết Trên Toàn Bộ 8 Trang Lõi</h2>
+          <p class="text-xs text-slate-500">Hiển thị tuần tự 100% danh mục Section từ trên xuống dưới cho từng trang (không dùng tab ẩn)</p>
+        </div>
+      </div>
+
+      <!-- Quick Page Anchor Links -->
+      <div class="bg-slate-100 p-3.5 rounded-xl border border-slate-200 flex items-center gap-2 overflow-x-auto text-xs font-bold text-slate-700 no-print">
+        <span class="text-slate-400 shrink-0">Nhảy nhanh tới trang:</span>
+        <a href="#page-1" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">1. Trang Chủ (8 Sec)</a>
+        <a href="#page-2" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">2. Danh Mục Ván (7 Sec)</a>
+        <a href="#page-3" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">3. Ván 15mm (7 Sec)</a>
+        <a href="#page-4" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">4. Ván 12/18mm (6 Sec)</a>
+        <a href="#page-5" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">5. Báo Giá RFQ (6 Sec)</a>
+        <a href="#page-6" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">6. Dự Án Cấp Hàng (6 Sec)</a>
+        <a href="#page-7" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">7. Nhà Máy (7 Sec)</a>
+        <a href="#page-8" class="bg-white hover:bg-blue-50 px-2.5 py-1 rounded border border-slate-300 shrink-0">8. Kho Bãi (6 Sec)</a>
+      </div>
+
+      <!-- Page 1: Homepage -->
+      <div id="page-1" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 01 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Trang Chủ (Homepage) — <code class="text-blue-600 font-mono text-sm">https://vanxaydung.com/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Nhà Máy Sản Xuất Ván Ép Phủ Phim Cốp Pha — Giá Xuất Xưởng Toàn Quốc</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 8 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hero Chuyển Đổi</td>
+                <td class="py-3 px-3 text-slate-600">Hiểu rõ ngành hàng, năng lực nhà máy và muốn nhận giá ngay.</td>
+                <td class="py-3 px-3 text-slate-800">H1: "Nhà Máy Sản Xuất Ván Ép Phủ Phim — Báo Giá Xuất Xưởng Tận Kho". Cam kết 3 không: Không rỗng ruột, Không tách lớp khi luân chuyển 6–10 lần, Không chậm tiến độ.</td>
+                <td class="py-3 px-3 text-slate-600">Background ảnh kho ván Đan Phượng; Form mini 3 ô: "SĐT + Tỉnh thành + Độ dày (12/15/18mm)".</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Nhận Báo Giá 5 Phút</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Thanh Cam Kết Vàng</td>
+                <td class="py-3 px-3 text-slate-600">Gỡ bỏ rào cản lo lắng về uy tín và độ bền cốp pha.</td>
+                <td class="py-3 px-3 text-slate-800">4 chỉ số vàng: Công suất 3.500 tấm/ngày • Kho bãi 5.000m2 có sẵn hàng • Luân chuyển 6–10 lần • Đổi trả 1-1 tại công trình nếu lỗi kỹ thuật.</td>
+                <td class="py-3 px-3 text-slate-600">Dải thanh ngang 4 cột icon phẳng hiện đại, tương phản cao trên nền xám nhạt/xanh navy.</td>
+                <td class="py-3 px-3 text-center"><a href="#chung-chi" class="text-blue-600 hover:underline font-semibold">Xem Quatest 1</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">3 Dòng Ván Cốt Lõi</td>
+                <td class="py-3 px-3 text-slate-600">Dẫn khách vào đúng độ dày họ đang cần cho công trình.</td>
+                <td class="py-3 px-3 text-slate-800">3 dòng: Ván 12mm (vách mỏng, dầm phụ); Ván 15mm (chuẩn quốc dân cho sàn dầm); Ván 18mm (nhà cao tầng chịu tải nặng). Quy cách: 1220x2440mm, keo WBP Melamine/Phenolic.</td>
+                <td class="py-3 px-3 text-slate-600">Bộ 3 thẻ Product Cards có bảng tóm tắt thông số, gắn tag "Bán chạy nhất" cho bản 15mm.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Chi Tiết</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bảng Giá Phân Cấp</td>
+                <td class="py-3 px-3 text-slate-600">Minh bạch tài chính, thu hút người mua số lượng lớn.</td>
+                <td class="py-3 px-3 text-slate-800">Bảng giá: Dưới 100 tấm, Giá sỉ 100–500 tấm, Giá nguyên xe container (kèm chiết khấu và hỗ trợ cước vận chuyển). Nhãn: "Giá xuất xưởng chưa VAT".</td>
+                <td class="py-3 px-3 text-slate-600">Bảng so sánh responsive, cho phép cuộn ngang mượt mà trên mobile.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Tải Bảng Giá PDF</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Năng Lực Xưởng Thật</td>
+                <td class="py-3 px-3 text-slate-600">Chứng minh quy mô xưởng thật, không phải văn phòng ảo.</td>
+                <td class="py-3 px-3 text-slate-800">Dây chuyền ép nóng Lương Sơn (Hòa Bình) & Tổng kho Đan Phượng (Hà Nội). Video ngắn 20s quay cận cảnh thả ván vào nồi nước sôi đun 10 tiếng không tách keo.</td>
+                <td class="py-3 px-3 text-slate-600">Lưới 4 ảnh xưởng sản xuất thực tế kèm video pop-up chứng thực (Social Proof).</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Hồ Sơ Xưởng</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Dự Án Đã Cấp Hàng</td>
+                <td class="py-3 px-3 text-slate-600">Tạo sự an tâm tuyệt đối nhờ các công trình lớn đã dùng.</td>
+                <td class="py-3 px-3 text-slate-800">Danh sách 4–6 công trình thật: Tên dự án, đơn vị thi công, số lượng tấm đã cấp, ảnh chụp dỡ cốp pha bề mặt bê tông phẳng bóng.</td>
+                <td class="py-3 px-3 text-slate-600">Slider trượt ảnh công trường thực tế (thay cho ảnh 3D căn hộ chung cư cũ).</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Công Trình</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">07</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Form Báo Giá RFQ</td>
+                <td class="py-3 px-3 text-slate-600">Thu thập thông tin khách sỉ chất lượng cao.</td>
+                <td class="py-3 px-3 text-slate-800">"Cần báo giá nhanh cho công trình? Gửi thông số, phòng kinh doanh phản hồi bảng chiết khấu và cước vận chuyển sau 15 phút".</td>
+                <td class="py-3 px-3 text-slate-600">Form chuẩn B2B: Tên + SĐT + Địa chỉ công trình + Loại ván + Số lượng tấm ước tính.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gửi Yêu Cầu</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">08</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Cẩm Nang Kỹ Thuật</td>
+                <td class="py-3 px-3 text-slate-600">Giữ chân người đọc và phân bổ sức mạnh liên kết SEO.</td>
+                <td class="py-3 px-3 text-slate-800">3 bài viết nổi bật: Hướng dẫn cưa xẻ ván không xơ mép, So sánh keo Melamine vs Phenolic, Bí quyết tăng số lần luân chuyển lên 10 lần.</td>
+                <td class="py-3 px-3 text-slate-600">Danh sách 3 bài viết dạng thẻ bài, ảnh rõ nét, trích dẫn ngắn 2 dòng.</td>
+                <td class="py-3 px-3 text-center"><a href="/tin-tuc/" class="text-blue-600 hover:underline font-semibold">Xem Tất Cả Bài</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 2: Category Hub -->
+      <div id="page-2" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 02 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Danh Mục Ván Ép Phủ Phim — <code class="text-blue-600 font-mono text-sm">/van-phu-phim/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Ván Ép Phủ Phim Cốp Pha Xây Dựng — Tổng Kho Nhà Máy Cung Cấp Toàn Quốc</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 7 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Category Hero</td>
+                <td class="py-3 px-3 text-slate-600">Khẳng định quy mô tổng kho ván phủ phim lớn nhất miền Bắc.</td>
+                <td class="py-3 px-3 text-slate-800">H1: "Ván Ép Phủ Phim Cốp Pha — Tiêu Chuẩn Xuất Khẩu, Luân Chuyển Đến 10 Lần". Vai trò thay thế cốp pha thép/gỗ tự nhiên giúp mặt bê tông phẳng bóng, không cần trát vữa.</td>
+                <td class="py-3 px-3 text-slate-600">Ảnh kho ván bọc đai thép chuyên nghiệp, nhãn cam kết: "Đầy đủ 12mm - 15mm - 18mm sẵn kho".</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Xem So Sánh</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bộ Lọc Nhu Cầu</td>
+                <td class="py-3 px-3 text-slate-600">Giúp khách chọn đúng độ dày trong 5 giây.</td>
+                <td class="py-3 px-3 text-slate-800">3 gợi ý nhanh: (1) Đổ vách mỏng, dầm nhỏ → 12mm; (2) Đổ sàn dầm dân dụng, biệt thự, dự án chuẩn → 15mm; (3) Đổ cao tầng, chịu tải nặng, luân chuyển 10+ lần → 18mm.</td>
+                <td class="py-3 px-3 text-slate-600">Bộ 3 thẻ chọn trực quan (Selector Cards) gắn kèm thông số độ dày và số lần luân chuyển đề xuất.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-100 text-orange-800 px-2 py-1 rounded font-bold text-[11px] block">Chọn Độ Dày</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bảng So Sánh 3 Loại Ván</td>
+                <td class="py-3 px-3 text-slate-600">So sánh trực diện thông số kỹ thuật để kỹ sư lựa chọn.</td>
+                <td class="py-3 px-3 text-slate-800">Bảng 4 cột: Độ dày (mm), Dung sai (±0.5mm), Trọng lượng (kg/tấm), Lực uốn dọc/ngang, Loại keo khuyên dùng, Số lần luân chuyển thực tế, Giá tham khảo.</td>
+                <td class="py-3 px-3 text-slate-600">Bảng so sánh responsive, hàng ván 15mm được tô viền cam nổi bật (dòng quốc dân).</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Tải File Excel</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Giải Phẫu Cấu Tạo Ván</td>
+                <td class="py-3 px-3 text-slate-600">Giải thích lý do ván V-HOME không bị phồng rộp.</td>
+                <td class="py-3 px-3 text-slate-800">3 thành phần: (1) Ruột ván: 100% gỗ rừng trồng bạch đàn/keo lạng mỏng sấy khô ép nhiệt; (2) Keo liên kết: WBP Melamine chịu nước 12-15h; (3) Phim Dynea nâu/đen chống bám dính bê tông.</td>
+                <td class="py-3 px-3 text-slate-600">Infographic mặt cắt lớp ván có mũi tên chú thích từng lớp kèm thông số chịu nước.</td>
+                <td class="py-3 px-3 text-center"><a href="/chung-chi-chat-luong/" class="text-blue-600 hover:underline font-semibold">Xem Chứng Chỉ</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hướng Dẫn Cho Kỹ Sư</td>
+                <td class="py-3 px-3 text-slate-600">Nâng cao thẩm quyền chuyên môn (E-E-A-T).</td>
+                <td class="py-3 px-3 text-slate-800">Hướng dẫn chọn độ dày theo khẩu độ xà gồ đỡ; Khi nào nên dùng keo Melamine 12% và khi nào bắt buộc phải dùng keo Phenolic chịu nước sôi 15h.</td>
+                <td class="py-3 px-3 text-slate-600">Bố cục dạng 2 cột: Bài toán công trường & Khuyến nghị kỹ thuật từ chuyên gia xưởng.</td>
+                <td class="py-3 px-3 text-center"><a href="#" class="text-blue-600 hover:underline font-semibold">Đọc Bài Keo</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">FAQ Câu Hỏi Thường Gặp</td>
+                <td class="py-3 px-3 text-slate-600">Xóa tan mọi thắc mắc trước khi mua hàng.</td>
+                <td class="py-3 px-3 text-slate-800">4 câu hỏi: Ván phủ phim dùng được mấy lần? Bị mưa ngoài trời có hỏng không? Cắt ván ra có cần quét keo mép không? Có nhận cắt quy cách theo yêu cầu không?</td>
+                <td class="py-3 px-3 text-slate-600">Accordion đóng/mở câu trả lời ngắn gọn dưới 3 dòng.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Hỏi Kỹ Sư</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">07</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Khối Báo Giá Đáy Trang</td>
+                <td class="py-3 px-3 text-slate-600">Giữ chân khách hàng trước khi rời web.</td>
+                <td class="py-3 px-3 text-slate-800">"Chưa rõ công trình của bạn cần dùng loại ván nào để tiết kiệm chi phí nhất? Gọi ngay kỹ sư để được tư vấn bóc tách khối lượng miễn phí".</td>
+                <td class="py-3 px-3 text-slate-600">Khung màu cam nổi bật, số hotline cỡ lớn 0352.942.223 kèm nút chat Zalo.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gọi 0352.942.223</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 3: Ván 15mm -->
+      <div id="page-3" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 03 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Sản Phẩm Ván 15mm (Doanh Thu Lõi) — <code class="text-blue-600 font-mono text-sm">/van-phu-phim/van-ep-phu-phim-15mm/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Ván Ép Phủ Phim 15mm Cốp Pha — Giá Xuất Xưởng, Luân Chuyển 8-10 Lần</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 7 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Product Hero & Gallery</td>
+                <td class="py-3 px-3 text-slate-600">Khách thấy rõ góc cạnh tấm ván, mép keo và khoảng giá.</td>
+                <td class="py-3 px-3 text-slate-800">Ảnh chụp cận cảnh 4 góc ván được bôi keo chống thấm nước màu đỏ/đen; quy cách 1220 x 2440 x 15mm; Lõi gỗ keo/bạch đàn; Phim Dynea bóng. Giá từ 2xx.000đ/tấm.</td>
+                <td class="py-3 px-3 text-slate-600">Gallery ảnh trượt thumbnail + Khung tóm tắt thông số bên phải + Nút nhận báo giá.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Báo Giá 15mm</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bảng Thông Số Datasheet</td>
+                <td class="py-3 px-3 text-slate-600">Cung cấp dữ liệu chính xác cho kỹ sư nghiệm thu.</td>
+                <td class="py-3 px-3 text-slate-800">Dung sai độ dày (±0.5mm), Loại keo (WBP Melamine 15%), Thời gian đun sôi trong nước (8–12 giờ không bong tróc), Lực bẻ uốn tĩnh, Tỷ trọng (650-700 kg/m3).</td>
+                <td class="py-3 px-3 text-slate-600">Bảng kẻ sọc rõ ràng (Zebra stripes), có nút tải file PDF phiếu test Quatest 1.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Tải Quatest (PDF)</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bài Toán Tiết Kiệm Đổ Sàn</td>
+                <td class="py-3 px-3 text-slate-600">Thuyết phục khách không ham rẻ mua ván kém chất lượng.</td>
+                <td class="py-3 px-3 text-slate-800">So sánh: Ván rẻ (180k, dùng 2-3 lần nứt mép, chi phí 60k-90k/lượt sàn) vs Ván V-HOME 15mm (dùng 8 lần, chỉ ~35k/lượt sàn, tiết kiệm 45% chi phí hoàn thiện bề mặt).</td>
+                <td class="py-3 px-3 text-slate-600">Đồ họa so sánh 2 cột trực quan (Ván thường vs Ván V-HOME 15mm), nhấn mạnh số tiền tiết kiệm.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Tư Vấn Luân Chuyển</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Quy Trình Thi Công Chuẩn</td>
+                <td class="py-3 px-3 text-slate-600">Hướng dẫn nhà thầu sử dụng ván bền nhất.</td>
+                <td class="py-3 px-3 text-slate-800">Hướng dẫn quét keo chống thấm mép ván sau khi cắt; cách vệ sinh bề mặt và bôi dầu tháo dỡ cốp pha; cách xếp kho kê pallet tránh ẩm.</td>
+                <td class="py-3 px-3 text-slate-600">Bố cục Accordion sổ xuống kèm hình minh họa từng bước thi công thực tế tại công trường.</td>
+                <td class="py-3 px-3 text-center"><a href="#" class="text-blue-600 hover:underline font-semibold">Video Cắt Ván</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Chính Sách Đổi Trả 1-1</td>
+                <td class="py-3 px-3 text-slate-600">Triệt tiêu mọi do dự trước khi chốt đơn.</td>
+                <td class="py-3 px-3 text-slate-800">Giao hàng tận chân công trình bằng xe cẩu/xe tải từ 1.5 tấn đến 30 tấn; Kiểm tra hàng trước khi dỡ; Cam kết 1 đổi 1 nếu ván bị rỗng ruột hoặc phồng rộp trong lần đổ sàn đầu tiên.</td>
+                <td class="py-3 px-3 text-slate-600">Khung viền xanh Navy nhấn mạnh, icon xe tải, icon khiên bảo hành 1-1 uy tín.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Tra Cước Xe</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Dự Án Đã Dùng Bản 15mm</td>
+                <td class="py-3 px-3 text-slate-600">Bằng chứng thực tế các công trình tương tự đã sử dụng.</td>
+                <td class="py-3 px-3 text-slate-800">Hình ảnh thực tế dỡ cốp pha sàn bê tông tại 3 công trình: Tòa nhà hỗn hợp Cầu Giấy, Nhà xưởng Bắc Ninh, Biệt thự KĐT Ecopark.</td>
+                <td class="py-3 px-3 text-slate-600">3 ảnh chụp thực tế có gắn tag số lượng tấm đã cấp cho từng công trình.</td>
+                <td class="py-3 px-3 text-center"><a href="/du-an-tieu-bieu/" class="text-blue-600 hover:underline font-semibold">Xem Tất Cả Dự Án</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">07</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Form Báo Giá Nhanh 15mm</td>
+                <td class="py-3 px-3 text-slate-600">Chốt đơn trực tiếp tại chân trang sản phẩm.</td>
+                <td class="py-3 px-3 text-slate-800">"Bạn cần cấp ván 15mm cho công trình tại đâu? Nhập số lượng dự kiến, chúng tôi báo giá kèm cước xe tải rẻ nhất trong 15 phút".</td>
+                <td class="py-3 px-3 text-slate-600">Form ngắn 4 trường: Họ tên, Số điện thoại, Địa chỉ công trình, Số lượng tấm cần lấy.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gửi Báo Giá 15mm</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 4: Ván 12mm & 18mm -->
+      <div id="page-4" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 04 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Sản Phẩm Ván 12mm & 18mm (Dòng Đặc Thù)</h3>
+            <p class="text-xs text-slate-500 mt-0.5">12mm (Sàn phụ/vách mỏng) vs 18mm (Nhà cao tầng siêu chịu tải)</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 6 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Khác Biệt Bản 12mm</th>
+                <th class="py-2.5 px-3">Khác Biệt Bản 18mm</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Product Hero</td>
+                <td class="py-3 px-3 text-slate-600">Định vị đúng bài toán công trình.</td>
+                <td class="py-3 px-3 text-slate-800">"Ván Cốp Pha 12mm Giá Rẻ Nhất Xưởng — Tối Ưu Chi Phí Đổ Vách & Sàn Phụ". Giá từ 210.000đ/tấm.</td>
+                <td class="py-3 px-3 text-slate-800">"Ván Ép Phủ Phim 18mm Siêu Chịu Lực — Chuyên Dụng Tòa Cao Tầng, Luân Chuyển 10–12 Lần". Giá từ 310.000đ/tấm.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Nhận Giá</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Datasheet Thông Số</td>
+                <td class="py-3 px-3 text-slate-600">Cung cấp trọng lượng & lực uốn.</td>
+                <td class="py-3 px-3 text-slate-800">Trọng lượng ~26kg/tấm; Lực uốn tĩnh 45 MPa; Keo Melamine 12-15%; Luân chuyển 5-6 lần.</td>
+                <td class="py-3 px-3 text-slate-800">Trọng lượng ~38kg/tấm; Lực uốn tĩnh 55 MPa; Keo Phenolic/Melamine 15%; Luân chuyển 10-12 lần.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Tải Spec (PDF)</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Khẩu Độ Xà Gồ Đỡ</td>
+                <td class="py-3 px-3 text-slate-600">Hướng dẫn kỹ thuật lắp đặt an toàn.</td>
+                <td class="py-3 px-3 text-slate-800">Khuyên dùng khoảng cách xà gồ đỡ bên dưới dày hơn: 30cm – 35cm để tránh võng sàn.</td>
+                <td class="py-3 px-3 text-slate-800">Cho phép nới rộng khẩu độ xà gồ đỡ lên 45cm – 50cm, giúp tiết kiệm 20% chi phí thuê giàn giáo đỡ.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Tư Vấn Kết Cấu</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Ứng Dụng Điển Hình</td>
+                <td class="py-3 px-3 text-slate-600">Giúp khách hàng chọn đúng loại ván.</td>
+                <td class="py-3 px-3 text-slate-800">Phù hợp: Cốp pha vách tường, dầm lanh tô, hố ga, công trình dân dụng thấp tầng (1-3 tầng).</td>
+                <td class="py-3 px-3 text-slate-800">Phù hợp: Tòa nhà chung cư cao tầng, trung tâm thương mại, mố trụ cầu đường, sàn chịu tải nặng.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Dự Án Thật</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Chính Sách Giao Hàng</td>
+                <td class="py-3 px-3 text-slate-600">Cam kết tồn kho đủ kiện hàng.</td>
+                <td class="py-3 px-3 text-slate-800">Sẵn kho 5.000 tấm tại Đan Phượng, xe tải giao trong 2h tại nội thành Hà Nội.</td>
+                <td class="py-3 px-3 text-slate-800">Xuất xưởng nguyên xe container từ nhà máy Lương Sơn đi các tỉnh miền Trung & Nam.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Tra Cước Cont</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Form Báo Giá Theo Quy Cách</td>
+                <td class="py-3 px-3 text-slate-600">Thu thập lead mua hàng chính xác.</td>
+                <td class="py-3 px-3 text-slate-800">Form mặc định tích chọn sẵn "Ván 12mm", ô nhập số lượng tấm cần cấp.</td>
+                <td class="py-3 px-3 text-slate-800">Form mặc định tích chọn sẵn "Ván 18mm", ô nhập số lượng tấm hoặc số xe cont.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gửi Yêu Cầu</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 5: RFQ Hub -->
+      <div id="page-5" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 05 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Trung Tâm Báo Giá Dự Án & Đại Lý (RFQ Hub) — <code class="text-blue-600 font-mono text-sm">/bao-gia-van-phu-phim/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Bảng Báo Giá Ván Ép Phủ Phim 2026 — Giá Xuất Xưởng Cho Dự Án & Đại Lý</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 6 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hero Báo Giá Minh Bạch</td>
+                <td class="py-3 px-3 text-slate-600">Nắm bắt cơ chế giá xưởng và cam kết cung ứng.</td>
+                <td class="py-3 px-3 text-slate-800">"Báo Giá Ván Ép Cốp Pha Phủ Phim Trực Tiếp Từ Nhà Máy". Rẻ hơn thị trường 7-10%, giao tận chân công trình trong 24h.</td>
+                <td class="py-3 px-3 text-slate-600">Banner Navy Blue uy tín, tóm tắt 3 chính sách (Giá xưởng - Đủ hàng - Hỗ trợ công nợ).</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Tải Báo Giá PDF</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bảng Giá Niêm Yết 3 Độ Dày</td>
+                <td class="py-3 px-3 text-slate-600">Khách dễ dàng so sánh giá giữa các loại ván.</td>
+                <td class="py-3 px-3 text-slate-800">Giá chi tiết: Ván 12mm (từ 210.000đ), Ván 15mm (từ 250.000đ), Ván 18mm (từ 310.000đ). Phân cấp: Lẻ dưới 100 tấm, Sỉ 100-500 tấm, Nguyên xe container.</td>
+                <td class="py-3 px-3 text-slate-600">Bảng biểu tương phản cao, phân chia 3 cột độ dày kèm bộ lọc chọn loại keo Melamine/Phenolic.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Lấy Chiết Khấu</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Công Cụ Dự Toán Cốp Pha</td>
+                <td class="py-3 px-3 text-slate-600">Giúp khách tự tính số lượng tấm ván và tổng chi phí.</td>
+                <td class="py-3 px-3 text-slate-800">Người dùng nhập diện tích sàn (m2) và số tầng → Hệ thống tự tính số tấm ván cần mua dựa trên số lần luân chuyển và chi phí ước tính trên mỗi m2 sàn.</td>
+                <td class="py-3 px-3 text-slate-600">Bộ tính toán tương tác (Interactive Calculator) viết bằng JavaScript nhẹ, hiển thị kết quả tức thì.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Lưu Bảng Tính</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Chính Sách Đại Lý Tỉnh</td>
+                <td class="py-3 px-3 text-slate-600">Thu hút các chủ cửa hàng VLXD nhập hàng phân phối.</td>
+                <td class="py-3 px-3 text-slate-800">Chiết khấu theo sản lượng tháng; Hỗ trợ làm biển bạt đại lý; Cấp mẫu ván thử nghiệm miễn phí; Bảo vệ vùng thị trường bán hàng độc quyền theo huyện/tỉnh.</td>
+                <td class="py-3 px-3 text-slate-600">Dạng 4 khối Card quyền lợi đại lý có icon minh họa, kèm nhãn "Độc quyền phân phối".</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Đăng Ký Đại Lý</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Vận Chuyển & Công Nợ</td>
+                <td class="py-3 px-3 text-slate-600">Xóa tan lo ngại về công nợ và giao hàng xa.</td>
+                <td class="py-3 px-3 text-slate-800">Đặt cọc 20-30%, thanh toán nốt khi nhận hàng tại chân công trình; Hỗ trợ công nợ gối đầu cho đối tác uy tín; Hỗ trợ 50-100% cước xe tải cho đơn hàng lớn.</td>
+                <td class="py-3 px-3 text-slate-600">Khung cam kết pháp nhân có con dấu công ty V-HOME, hình ảnh đội xe cẩu/xe tải sẵn sàng bốc hàng.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Tra Cước Xe</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Form RFQ Nhận Báo Giá Sỉ</td>
+                <td class="py-3 px-3 text-slate-600">Chốt lead khách mua khối lượng lớn.</td>
+                <td class="py-3 px-3 text-slate-800">"Điền thông số công trình để phòng kinh doanh tính chiết khấu tối đa và cước vận chuyển rẻ nhất trong 15 phút".</td>
+                <td class="py-3 px-3 text-slate-600">Form B2B: Tên, Số điện thoại, Tỉnh thành nhận hàng, Loại ván cần lấy (12/15/18mm), Số lượng ước tính.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gửi RFQ Ngay</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 6: Projects -->
+      <div id="page-6" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 06 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Hồ Sơ Cung Ứng Dự Án (Case Studies) — <code class="text-blue-600 font-mono text-sm">/du-an-tieu-bieu/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Dự Án Đã Cung Ứng Ván Ép Cốp Pha — Minh Chứng Năng Lực Cấp Hàng V-HOME</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 6 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hero Thống Kê Năng Lực</td>
+                <td class="py-3 px-3 text-slate-600">Tạo ấn tượng mạnh về mạng lưới cung ứng rộng lớn.</td>
+                <td class="py-3 px-3 text-slate-800">"Đồng Hành Cùng Hơn 500+ Công Trình Xây Dựng Trên Khắp Cả Nước". Nêu rõ tổng sản lượng: hơn 1.000.000 m2 ván phủ phim đã cấp cho các tổng thầu lớn.</td>
+                <td class="py-3 px-3 text-slate-600">Dải số liệu lớn: 500+ Dự án • 30+ Tỉnh thành • 3.500 Tấm/ngày • 100% Giao đúng tiến độ.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Tải Profile PDF</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bộ Lọc Phân Loại Công Trình</td>
+                <td class="py-3 px-3 text-slate-600">Giúp người dùng lọc xem công trình tương tự họ.</td>
+                <td class="py-3 px-3 text-slate-800">Tabs: Tất cả dự án, Nhà cao tầng / Chung cư, Nhà xưởng KCN, Cầu đường hạ tầng, Biệt thự dân dụng.</td>
+                <td class="py-3 px-3 text-slate-600">Thanh Tab lọc bấm mượt mà (Filter Tabs), lọc danh sách tức thì không tải lại trang.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Lọc Dự Án</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Lưới Case Study Thực Tế</td>
+                <td class="py-3 px-3 text-slate-600">Cung cấp bằng chứng giao ván thật không thể chối cãi.</td>
+                <td class="py-3 px-3 text-slate-800">Mỗi dự án gồm: Tên công trình; Đơn vị thi công; Quy cách ván cấp (15mm/18mm); Số lượng (ví dụ: 8.500 tấm / 3 xe cont); Ảnh xe cẩu ván đến công trường và ảnh dỡ cốp pha bê tông phẳng bóng.</td>
+                <td class="py-3 px-3 text-slate-600">Lưới thẻ 3 cột có tag quy mô, hover phóng to ảnh công trường sắc nét.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Chi Tiết</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Bài Chi Tiết Một Dự Án Mẫu</td>
+                <td class="py-3 px-3 text-slate-600">Đi sâu vào bài toán kỹ thuật đã giải quyết.</td>
+                <td class="py-3 px-3 text-slate-800">Bố cục bài chi tiết: Yêu cầu của chủ đầu tư; Tiến độ cấp ván 3 đợt theo tầng hầm - thân - mái; Đánh giá của chỉ huy trưởng về số lần luân chuyển thực tế.</td>
+                <td class="py-3 px-3 text-slate-600">Gallery hình ảnh thi công thực tế tại công trường + Trích dẫn phản hồi của ban chỉ huy.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Cấp Tương Tự</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Biên Bản Giao Nhận & Thư Khen</td>
+                <td class="py-3 px-3 text-slate-600">Bằng chứng tối cao củng cố niềm tin tuyệt đối.</td>
+                <td class="py-3 px-3 text-slate-800">Scan một số biên bản giao nhận hàng hóa có ký nhận của đại diện công trường; Thư giới thiệu đối tác tin cậy của các công ty xây dựng.</td>
+                <td class="py-3 px-3 text-slate-600">Slider trượt các chứng từ được làm mờ thông tin bảo mật, cho phép phóng to để xem rõ dấu mộc.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Dấu Mộc</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Khối Đặt Lịch Giữ Hàng Dự Án</td>
+                <td class="py-3 px-3 text-slate-600">Kêu gọi chủ thầu chuẩn bị khởi công liên hệ.</td>
+                <td class="py-3 px-3 text-slate-800">"Dự án của bạn sắp đổ sàn? Đừng để thiếu ván làm chậm tiến độ! Chúng tôi cam kết giữ giá và trữ sẵn hàng trong kho cho suốt giai đoạn thi công".</td>
+                <td class="py-3 px-3 text-slate-600">Form đặt lịch giữ hàng và tiến độ cấp ván theo từng đợt đổ sàn.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Giữ Hàng Dự Án</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 7: Factory -->
+      <div id="page-7" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 07 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Nhà Máy & Năng Lực Sản Xuất — <code class="text-blue-600 font-mono text-sm">/gioi-thieu/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Nhà Máy Sản Xuất Ván Ép Phủ Phim Tú Anh 68 — Công Ty Cổ Phần V-HOME</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 7 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hero Lịch Sử & Định Vị</td>
+                <td class="py-3 px-3 text-slate-600">Khẳng định bề dày kinh nghiệm và quy mô thật.</td>
+                <td class="py-3 px-3 text-slate-800">"Gần 30 Năm Kinh Nghiệm Chế Biến Lâm Sản & Sản Xuất Ván Cốp Pha Xây Dựng". Pháp nhân: Công Ty CP TVTK & Xây Dựng V-HOME, vận hành cụm nhà máy Tú Anh 68.</td>
+                <td class="py-3 px-3 text-slate-600">Ảnh toàn cảnh xưởng 10.000m2 tại Lương Sơn (Hòa Bình) kèm bản chụp giấy phép kinh doanh.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Xem Video Xưởng</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Các Cột Mốc Phát Triển</td>
+                <td class="py-3 px-3 text-slate-600">Xây dựng uy tín qua thời gian hoạt động.</td>
+                <td class="py-3 px-3 text-slate-800">1995 (Xưởng xẻ gỗ tự nhiên) → 2008 (Đầu tư máy ép nóng thủy lực đầu tiên) → 2018 (Dây chuyền phủ phim tự động 3.500 tấm/ngày) → Hiện nay (Kho Đan Phượng phủ sóng miền Bắc).</td>
+                <td class="py-3 px-3 text-slate-600">Biểu đồ Timeline nằm ngang trực quan, có ảnh tư liệu xưởng gỗ qua các thời kỳ.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Lịch Sử</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Dây Chuyền Công Nghệ</td>
+                <td class="py-3 px-3 text-slate-600">Minh chứng máy móc hiện đại tạo ván phẳng.</td>
+                <td class="py-3 px-3 text-slate-800">4 cụm máy: (1) Máy bóc và sấy ván lạng độ ẩm &lt;12%; (2) Máy lăn keo 4 trục đảo đều WBP Melamine; (3) Máy ép nhiệt 500 tấn đanh chắc; (4) Máy cắt 4 biên laser chuẩn 1220x2440mm.</td>
+                <td class="py-3 px-3 text-slate-600">Lưới 4 ảnh máy móc đang vận hành thực tế kèm chú thích thông số công nghệ.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Quy Trình Ép</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Nguồn Gỗ Rừng Trồng</td>
+                <td class="py-3 px-3 text-slate-600">Cam kết nguồn gốc xuất xứ gỗ rừng trồng hợp pháp.</td>
+                <td class="py-3 px-3 text-slate-800">Sử dụng 100% gỗ rừng trồng (Bạch đàn, keo lai) được cấp phép khai thác bền vững; quy trình ép khép kín không phát thải khói độc ra môi trường dân cư.</td>
+                <td class="py-3 px-3 text-slate-600">Khung chứng thực xanh (Eco-friendly) kèm ảnh vùng nguyên liệu rừng trồng liên kết.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Nguồn Gỗ</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Chứng Nhận Kiểm Định Quatest</td>
+                <td class="py-3 px-3 text-slate-600">Đưa ra bằng chứng kiểm nghiệm của nhà nước.</td>
+                <td class="py-3 px-3 text-slate-800">Trưng bày chứng chỉ Quatest 1 về lực kéo bám dính keo, độ trương nở chiều dày ngâm nước dưới 8%, giới hạn uốn tĩnh đạt chuẩn TCVN cho ván coppha phủ phim.</td>
+                <td class="py-3 px-3 text-slate-600">Gallery ảnh chứng nhận chất lượng cao, click phóng to (Lightbox Zoom) để đọc từng chữ số.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Tải Quatest</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Đội Ngũ KCS & Quản Lý</td>
+                <td class="py-3 px-3 text-slate-600">Tạo niềm tin từ yếu tố con người thực tế.</td>
+                <td class="py-3 px-3 text-slate-800">Hình ảnh đội ngũ kỹ sư giám sát chất lượng KCS kiểm tra từng tấm ván trước khi đóng kiện và các nhân sự phòng kinh doanh dự án.</td>
+                <td class="py-3 px-3 text-slate-600">Danh thiếp ảnh đại diện kèm số hotline chuyên môn của từng bộ phận hỗ trợ.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Liên Hệ Kỹ Sư</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">07</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Mời Tham Quan Nhà Máy</td>
+                <td class="py-3 px-3 text-slate-600">Bước tạo lòng tin cao nhất đối với nhà thầu.</td>
+                <td class="py-3 px-3 text-slate-800">"Chúng tôi luôn sẵn sàng đón tiếp quý chủ đầu tư và nhà thầu đến tham quan trực tiếp dây chuyền sản xuất tại Lương Sơn và hệ thống kho Đan Phượng trước khi ký hợp đồng".</td>
+                <td class="py-3 px-3 text-slate-600">Khung thư mời trang trọng có form đăng ký hẹn ngày tham quan xưởng.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Hẹn Thăm Xưởng</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Page 8: Warehouses -->
+      <div id="page-8" class="space-y-3 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Trang 08 / 08</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Hệ Thống Kho Bãi & Liên Hệ Kho — <code class="text-blue-600 font-mono text-sm">/he-thong-kho-bai/</code></h3>
+            <p class="text-xs text-slate-500 mt-0.5">Tiêu đề H1: <em>Hệ Thống Kho Bãi Ván Ép Cốp Pha — Vị Trí Cửa Ngõ Thủ Đô, Giao Hàng 24/7</em></p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Tổng cộng: 6 Sections</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 font-bold text-slate-700 uppercase border-b border-slate-200">
+                <th class="py-2.5 px-3 w-10 text-center">STT</th>
+                <th class="py-2.5 px-3 w-40">Tên Section</th>
+                <th class="py-2.5 px-3 w-48">Mục Tiêu Hành Vi</th>
+                <th class="py-2.5 px-3">Nội Dung Chi Tiết / Copy Mẫu Chuẩn Bị</th>
+                <th class="py-2.5 px-3 w-48">UI Component & Mobile</th>
+                <th class="py-2.5 px-3 w-32 text-center">Nút Bấm CTA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">01</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Hero Mạng Lưới Kho Bãi</td>
+                <td class="py-3 px-3 text-slate-600">Nhận biết năng lực trữ hàng và tốc độ giao hàng.</td>
+                <td class="py-3 px-3 text-slate-800">"Tổng Kho Ván Ép Phủ Phim 5.000m2 — Sẵn Sàng Giao Hàng Trong 2 Giờ Tại Hà Nội". Vị trí cửa ngõ thủ đô, xe tải từ 1.5 đến 30 tấn ra vào bốc dỡ không cấm giờ.</td>
+                <td class="py-3 px-3 text-slate-600">Ảnh kho ván cao chạm trần, đường nội bộ rộng xe cont lùi tận cửa kho.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Chỉ Đường Kho</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">02</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Cơ Sở 1: Kho Đan Phượng (Hà Nội)</td>
+                <td class="py-3 px-3 text-slate-600">Hướng dẫn khách mua khu vực Hà Nội & lân cận.</td>
+                <td class="py-3 px-3 text-slate-800">Địa chỉ: KCN Hồ Điền, Liên Trung, Đan Phượng, Hà Nội. DT: 3.000m2. Chức năng: Lưu kho ván 12/15/18mm, cấp lẻ từ 50 tấm đến nguyên xe, xe cẩu tự hành hỗ trợ bốc xếp miễn phí. Hotline: 0352.942.223.</td>
+                <td class="py-3 px-3 text-slate-600">Bản đồ Google Maps định vị GPS + Ảnh thực tế cổng vào và biển hiệu kho Đan Phượng.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold text-[11px] block">Mở Google Maps</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">03</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Cơ Sở 2: Nhà Máy Lương Sơn (Hòa Bình)</td>
+                <td class="py-3 px-3 text-slate-600">Hướng dẫn khách lấy hàng nguyên cont xuất xưởng.</td>
+                <td class="py-3 px-3 text-slate-800">Địa chỉ: Khu NMXM Lương Sơn, Tân Vinh, Lương Sơn, Hòa Bình. DT: 10.000m2. Chức năng: Ép nhiệt, phủ phim, đóng đai kiện hàng, xuất container đi các tỉnh với giá xưởng rẻ nhất.</td>
+                <td class="py-3 px-3 text-slate-600">Bản đồ vị trí nhà máy + Ảnh trạm cân xe tải và sân bãi bốc xếp container.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold text-[11px] block">Điều Xe Xưởng</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">04</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Quy Trình Nhận Hàng An Toàn</td>
+                <td class="py-3 px-3 text-slate-600">Giúp khách hàng nắm rõ quy trình giao nhận.</td>
+                <td class="py-3 px-3 text-slate-800">4 bước: (1) Khách xác nhận chủng loại & số lượng; (2) Kho xuất phiếu và kiểm tra dung sai, độ phẳng tại chỗ; (3) Hỗ trợ cẩu bốc lên xe; (4) Bàn giao hóa đơn GTGT và chứng chỉ CO/CQ.</td>
+                <td class="py-3 px-3 text-slate-600">Sơ đồ quy trình 4 bước dạng icon phẳng rõ ràng, dễ hiểu.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-slate-100 text-slate-800 px-2 py-1 rounded font-bold text-[11px] block">Xem Bảng Cước</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">05</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Thời Gian Mở Kho & Ca Đêm</td>
+                <td class="py-3 px-3 text-slate-600">Thuận tiện cho công trình đổ bê tông ban đêm.</td>
+                <td class="py-3 px-3 text-slate-800">Mở cửa kho: 7h00 – 18h30 hàng ngày (kể cả Thứ 7 & Chủ Nhật). Hỗ trợ bốc hàng khẩn cấp ban đêm cho các công trình đổ bê tông ca đêm (cần liên hệ trước 17h00).</td>
+                <td class="py-3 px-3 text-slate-600">Bảng giờ làm việc và Hotline trực ban ca đêm nổi bật.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded font-bold text-[11px] block">Gọi Ca Đêm</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 text-center font-bold text-slate-400">06</td>
+                <td class="py-3 px-3 font-semibold text-slate-900">Form Nhắn Đến Ban Giám Đốc</td>
+                <td class="py-3 px-3 text-slate-600">Thu thập yêu cầu hợp tác đại lý hoặc phản ánh.</td>
+                <td class="py-3 px-3 text-slate-800">Form liên hệ: Họ tên, Số điện thoại, Nhu cầu (Mua hàng / Làm đại lý / Khiếu nại dịch vụ), Lời nhắn gửi thẳng email admin@vanxaydung.com.</td>
+                <td class="py-3 px-3 text-slate-600">Form tinh giản kết nối trực tiếp email ban giám đốc công ty V-HOME.</td>
+                <td class="py-3 px-3 text-center"><span class="bg-orange-600 text-white px-2 py-1 rounded font-bold text-[11px] block">Gửi Lời Nhắn</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Phase Execution Roadmap -->
+    <section id="roadmap" class="space-y-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">5. Lộ Trình Triển Khai 3 Pha (Action Roadmap)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">Pha 1: Tuần 1</span>
+            <span class="text-xs text-slate-500 font-semibold">Cấp Cứu Nền Tảng</span>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Mở Khóa SEO & Thống Nhất Nhận Diện</h4>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5">✓ Tắt tùy chọn chặn noindex trong WordPress.</li>
+            <li class="flex items-start gap-1.5">✓ Đồng nhất 1 thương hiệu V-HOME / Nhà máy Tú Anh 68.</li>
+            <li class="flex items-start gap-1.5">✓ Xóa bỏ footer lạ Vanphuphimvn.com.</li>
+            <li class="flex items-start gap-1.5">✓ Gắn thanh gọi nhanh (Sticky Call Bar) mobile.</li>
+            <li class="flex items-start gap-1.5">✓ Xóa blocks sitemap và redirect 301 bài trùng `-2`.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Pha 2: Tuần 2 - 3</span>
+            <span class="text-xs text-slate-500 font-semibold">Thiết Kế & Tái Cấu Trúc</span>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Dựng Mới Giao Diện & Trung Tâm Báo Giá</h4>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5">✓ Dựng mới Hero trang chủ, bảng giá theo số lượng.</li>
+            <li class="flex items-start gap-1.5">✓ Chuẩn hóa 3 trang sản phẩm 12/15/18mm (Datasheet Quatest).</li>
+            <li class="flex items-start gap-1.5">✓ Viết lại mục Dự Án thành hồ sơ cấp hàng thực tế.</li>
+            <li class="flex items-start gap-1.5">✓ Xây dựng trang Báo Giá Dự Án & Đại Lý (`/bao-gia-van-phu-phim/`).</li>
+            <li class="flex items-start gap-1.5">✓ Chuẩn hóa font chữ Inter và typography sạch sẽ.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded">Pha 3: Tuần 4+</span>
+            <span class="text-xs text-slate-500 font-semibold">Tăng Tốc Doanh Số</span>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Tối Ưu SEO Cụm & Bật Google Ads</h4>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-1.5">✓ Liên kết nội bộ từ 32 bài tin tức về trang sản phẩm.</li>
+            <li class="flex items-start gap-1.5">✓ Setup tracking GTM: click call, chat zalo, gửi form RFQ.</li>
+            <li class="flex items-start gap-1.5">✓ Bật 3 nhóm chiến dịch Google Ads Search thử nghiệm.</li>
+            <li class="flex items-start gap-1.5">✓ Theo dõi chất lượng lead hàng tuần và tối ưu chi phí.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>Báo cáo kiểm tra và phương án tăng trưởng độc lập dành riêng cho <strong>vanxaydung.com</strong></p>
+      <p class="mt-1">Dữ liệu được rà soát trực tiếp từ mã nguồn và tài nguyên công khai ngày 24/10/2026.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

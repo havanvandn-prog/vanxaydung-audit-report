@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Technical Audit & Implementation Blueprint — vanxaydung.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #10b981;
+      --accent-light: rgba(16, 185, 129, 0.15);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.15);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.15);
+      --info: #38bdf8;
+      --info-bg: rgba(56, 189, 248, 0.15);
+      --purple: #a855f7;
+      --purple-bg: rgba(168, 85, 247, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 32px 20px 80px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .badge-bar { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-p0 { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger); }
+    .badge-p1 { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning); }
+    .badge-p2 { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple); }
+    .badge-tech { background: var(--info-bg); color: var(--info); border: 1px solid var(--info); }
+    h1 { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    p.lead { color: var(--text-muted); font-size: 14px; }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .stat-card .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    .stat-card .val { font-size: 22px; font-weight: 800; color: #fff; font-family: 'JetBrains Mono', monospace; }
+    .stat-card .sub { font-size: 12px; margin-top: 4px; }
+    .val-danger { color: var(--danger) !important; }
+    .val-warn { color: var(--warning) !important; }
+    .val-ok { color: var(--accent) !important; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+    th {
+      background: #0f172a;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 12px;
+      border: 1px solid var(--card-border);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 10px 12px;
+      border: 1px solid var(--card-border);
+      vertical-align: top;
+      color: #e2e8f0;
+    }
+    tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 2px 6px;
+      color: #38bdf8;
+    }
+    pre { padding: 12px; overflow-x: auto; margin: 10px 0; }
+    .finding-block {
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background: rgba(15, 23, 42, 0.5);
+    }
+    .finding-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .finding-title { font-size: 14px; font-weight: 700; color: #fff; }
+    .desc { color: var(--text-muted); margin-bottom: 8px; font-size: 13px; }
+    .root-cause { color: #f59e0b; font-size: 12px; margin-bottom: 6px; }
+    .action { color: #34d399; font-size: 12px; font-weight: 500; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge-bar">
+      <span class="badge badge-tech">Kỹ Thuật Nội Bộ</span>
+      <span class="badge badge-p0">P0: 4 Điểm Nghẽn Tê Liệt</span>
+      <span class="badge badge-p1">P1: 6 Hạng Mục Ưu Tiên</span>
+      <span class="badge badge-p2">P2: 4 Hạng Mục Chuẩn Hóa</span>
+    </div>
+    <h1>Kế Hoạch Kiểm Định Kỹ Thuật & Tái Cấu Trúc — vanxaydung.com</h1>
+    <p class="lead">Tài liệu kỹ thuật nội bộ dành cho Senior Frontend Dev, WordPress Specialist, Tracking Engineer và SEO Operations trước khi nhận hợp đồng triển khai tối ưu UI/UX.</p>
+  </header>
+
+  <div class="grid-stats">
+    <div class="stat-card">
+      <div class="label">Trạng thái Chỉ mục Google</div>
+      <div class="val val-danger">BLOCKED 100%</div>
+      <div class="sub" style="color:#ef4444;"><code>noindex, nofollow</code> toàn trang</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Số Lượng URL Phát Hiện</div>
+      <div class="val">49 URLs</div>
+      <div class="sub">15 Pages, 32 Posts, 13 BĐS</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google Tag Manager</div>
+      <div class="val val-warn">GTM-NLVT55ZL</div>
+      <div class="sub">Chưa có DataLayer sự kiện</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Ước Tính Giờ Công Kỹ Thuật</div>
+      <div class="val val-ok">40 Giờ</div>
+      <div class="sub">Dev 18h | UI 12h | Content 10h</div>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="card-title">1. Phân Tích Kỹ Thuật Cốt Lõi (Architecture & Server Diagnostics)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Hạng mục</th>
+          <th>Thông số kỹ thuật ghi nhận</th>
+          <th>Đánh giá kỹ thuật</th>
+          <th>Hành động cần làm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Web Server & CMS</strong></td>
+          <td>WordPress 6.x + Theme Flatsome + WP-Rocket Cache</td>
+          <td>Nền tảng chuẩn, xử lý cache tốt qua WP-Rocket.</td>
+          <td>Giữ nguyên, tối ưu lại file tĩnh và CSS/JS lặp.</td>
+        </tr>
+        <tr>
+          <td><strong>Meta Robots</strong></td>
+          <td><code>&lt;meta name="robots" content="noindex, nofollow" /&gt;</code></td>
+          <td style="color:#ef4444; font-weight:700;">NGHIÊM TRỌNG: Chặn 100% Googlebot thu thập và lập chỉ mục.</td>
+          <td>Truy cập WordPress Admin &gt; Cài đặt &gt; Đọc &gt; Tắt bỏ checkbox chặn tìm kiếm.</td>
+        </tr>
+        <tr>
+          <td><strong>XML Sitemap Index</strong></td>
+          <td><code>sitemap_index.xml</code> chứa <code>blocks-sitemap.xml</code> (2 URL rác)</td>
+          <td>Lộ template UX Blocks của theme ra ngoài sitemap.</td>
+          <td>Cấu hình Yoast SEO: Tắt loại bài viết tùy chỉnh <code>blocks</code>.</td>
+        </tr>
+        <tr>
+          <td><strong>Ngôn ngữ HTML</strong></td>
+          <td><code>&lt;html lang="en-US"&gt;</code></td>
+          <td>Khai báo sai ngôn ngữ nội dung tiếng Việt.</td>
+          <td>Chuyển ngôn ngữ trang web sang Tiếng Việt trong WP Admin.</td>
+        </tr>
+        <tr>
+          <td><strong>Tracking & Đo lường</strong></td>
+          <td>Đã nhúng <code>GTM-NLVT55ZL</code> nhưng không có trigger đo lường nút bấm</td>
+          <td>Thiếu toàn bộ sự kiện: <code>click_hotline</code>, <code>click_zalo</code>, <code>submit_rfq</code>.</td>
+          <td>Cài đặt bộ Tag/Trigger đo lường chuyển đổi chuẩn GTM.</td>
+        </tr>
+        <tr>
+          <td><strong>Heading Hierarchy</strong></td>
+          <td>Trang sản phẩm có tới 3 thẻ <code>&lt;h1&gt;</code>; trang giới thiệu/liên hệ có 0 thẻ <code>&lt;h1&gt;</code></td>
+          <td>Cấu trúc heading phân mảnh, vi phạm chuẩn SEO Onpage.</td>
+          <td>Tái cấu trúc: Mỗi trang chỉ duy nhất 1 thẻ <code>&lt;h1&gt;</code> đại diện cho chủ đề chính.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-title">2. Danh Sách Lỗi Kỹ Thuật & Hướng Dẫn Sửa Chữa (Technical Action Plan)</div>
+
+    <div class="finding-block">
+      <div class="finding-head">
+        <div class="finding-title">[F-SEO-01] Chặn lập chỉ mục toàn trang qua thẻ meta robots</div>
+        <span class="badge badge-p0">P0 - Khẩn cấp</span>
+      </div>
+      <div class="desc">Mã nguồn 100% các trang phát hiện: <code>&lt;meta name='robots' content='noindex, nofollow' /&gt;</code>.</div>
+      <div class="root-cause">Nguyên nhân: Người quản trị đánh dấu vào ô "Tương tác công cụ tìm kiếm: Ngăn chặn..." trong WordPress nhưng quên bỏ chọn khi xuất bản.</div>
+      <div class="action">Hành động: Vào WP Admin &gt; Cài đặt &gt; Đọc &gt; Bỏ chọn "Tương tác công cụ tìm kiếm" &gt; Lưu thay đổi. Sau đó cấu hình lại Yoast SEO để sinh thẻ <code>index, follow</code>.</div>
+    </div>
+
+    <div class="finding-block">
+      <div class="finding-head">
+        <div class="finding-title">[F-UI-01] Xung đột danh tính thương hiệu & thông tin pháp nhân</div>
+        <span class="badge badge-p0">P0 - Khẩn cấp</span>
+      </div>
+      <div class="desc">Footer: "V-HOME" kèm bản quyền "Vanphuphimvn.com"; Giới thiệu: "Tú Anh 68"; Đại lý: "Lạc Việt Plywood".</div>
+      <div class="root-cause">Nguyên nhân: Sao chép mã nguồn và nội dung từ các dự án cũ mà không rà soát lại thông tin doanh nghiệp.</div>
+      <div class="action">Hành động: Chuẩn hóa 1 bộ nhận diện duy nhất: Công Ty Cổ Phần Tư Vấn Thiết Kế Và Xây Dựng V-HOME (Chủ sở hữu) — Nhà Máy Ván Phủ Phim Tú Anh 68. Xóa toàn bộ liên kết và text của Vanphuphimvn.com và Lạc Việt.</div>
+    </div>
+
+    <div class="finding-block">
+      <div class="finding-head">
+        <div class="finding-title">[F-MOB-01] Thiếu thanh điều hướng cố định chân màn hình di động (Sticky Bar)</div>
+        <span class="badge badge-p0">P0 - Khẩn cấp</span>
+      </div>
+      <div class="desc">Di động chiếm >75% lưu lượng nhưng không có Sticky Action Bar; hotline là chữ tĩnh không thể chạm gọi.</div>
+      <div class="root-cause">Nguyên nhân: Thiết kế web chỉ tập trung vào máy tính bàn (desktop), bỏ quên trải nghiệm ngón tay cái của cai thầu tại công trường.</div>
+      <div class="action">Hành động: Lập trình component <code>.mobile-sticky-bar</code> cố định đáy màn hình với 2 nút: "Gọi Ngay" (gắn <code>tel:</code>) và "Zalo Báo Giá 24/7" (gắn link Zalo chat). Khóa viewport chống tràn ngang.</div>
+    </div>
+
+    <div class="finding-block">
+      <div class="finding-head">
+        <div class="finding-title">[F-UI-02] Rác nội dung: Chuyên mục Dự án copy nguyên văn bài bán căn hộ chung cư</div>
+        <span class="badge badge-p1">P1 - Ưu tiên cao</span>
+      </div>
+      <div class="desc">13 bài viết thuộc post type <code>featured_item</code> copy PR bán nhà Vinhomes Smart City, Skylake, D'. Palais de Louis...</div>
+      <div class="root-cause">Nguyên nhân: Sử dụng dữ liệu demo (dummy data) của theme Flatsome làm nội dung chính mà không thay thế bằng case study cung cấp ván thật.</div>
+      <div class="action">Hành động: Xóa vĩnh viễn 13 bài viết BĐS; cấu hình redirect hoặc 410. Viết lại 6 Case Study cung ứng cốp pha chuẩn: Tên nhà thầu, khối lượng tấm, loại keo, tiến độ cấp hàng.</div>
+    </div>
+
+    <div class="finding-block">
+      <div class="finding-head">
+        <div class="finding-title">[F-CRO-02] Nội dung trùng lặp và đa thẻ H1 trên trang sản phẩm</div>
+        <span class="badge badge-p1">P1 - Ưu tiên cao</span>
+      </div>
+      <div class="desc">Trang ván 12mm, 15mm bị lặp đoạn văn keo WBP 2 lần liên tiếp; xuất hiện 3 thẻ H1 trên cùng một URL.</div>
+      <div class="root-cause">Nguyên nhân: Biên tập cẩu thả qua Flatsome UX Builder; các text block bị nhân đôi nhưng không xóa.</div>
+      <div class="action">Hành động: Rà soát lại template trang sản phẩm, xóa text block trùng, cấu hình thẻ tiêu đề sản phẩm là H1 duy nhất, các đề mục con là H2/H3.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">3. Bảng Phân Bổ Công Việc & Nghiệm Thu Kỹ Thuật (Acceptance Checklist)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Mã đầu việc</th>
+          <th>Người phụ trách</th>
+          <th>Nội dung bàn giao kỹ thuật</th>
+          <th>Tiêu chí nghiệm thu (Acceptance Criteria)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>DEV-01</code></td>
+          <td>Senior Web Dev</td>
+          <td>Mở chỉ mục Google & Cấu hình Robots/Sitemap</td>
+          <td>Kiểm tra <code>curl -I https://vanxaydung.com/</code> thấy <code>meta name="robots" content="index, follow"</code>.</td>
+        </tr>
+        <tr>
+          <td><code>DEV-02</code></td>
+          <td>Frontend Dev</td>
+          <td>Code thanh Sticky Bottom Bar 2 nút trên di động</td>
+          <td>Mở điện thoại 390px thấy 2 nút nổi ở đáy màn hình, bấm gọi thông số, bấm Zalo nhảy app chat.</td>
+        </tr>
+        <tr>
+          <td><code>DEV-03</code></td>
+          <td>Frontend Dev</td>
+          <td>Tái cấu trúc Hero Section theo phương án mẫu</td>
+          <td>Tương phản chữ > 4.5:1, hiển thị đủ 4 badges năng lực và 2 nút bấm chuyển đổi.</td>
+        </tr>
+        <tr>
+          <td><code>DEV-04</code></td>
+          <td>Tracking Specialist</td>
+          <td>Cài đặt GTM Events & DataLayer</td>
+          <td>Debug GTM thấy bắn sự kiện: <code>click_call</code>, <code>click_zalo</code>, <code>submit_rfq_success</code>.</td>
+        </tr>
+        <tr>
+          <td><code>CNT-01</code></td>
+          <td>Content Specialist</td>
+          <td>Thay thế chuyên mục Dự Án & Đồng nhất thương hiệu</td>
+          <td>Không còn bài viết bán nhà; 6 case study cung ứng ván thật hiển thị chỉn chu; chân trang đồng nhất 1 pháp nhân.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+</body>
+</html>
